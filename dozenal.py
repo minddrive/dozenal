@@ -45,6 +45,13 @@ class Dozenal():
 
         return Dozenal(dec_diff, decimal=True)
 
+    def __truediv__(self, other):
+        """Divide two dozenal numbers (not integral result)"""
+
+        dec_div = self.decimal / other.decimal
+
+        return Dozenal(dec_div, decimal=True)
+
     @staticmethod
     def _validate(num, dozenal=True):
         """Ensure dozenal or decimal number is valid"""
