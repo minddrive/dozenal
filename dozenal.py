@@ -134,7 +134,11 @@ class Dozenal():
 
         if fraction is not None:
             fractional = []
-            fraction /= 10 ** (int(math.log10(fraction)) + 1)
+
+            if fraction == 0:
+                fraction = 0.0
+            else:
+                fraction /= 10 ** (int(math.log10(fraction)) + 1)
 
             for idx in range(12):
                 fraction *= 12
